@@ -1,0 +1,7 @@
+files/
+config/
+
+node_modules/
+.vscode/
+.history/
+*.exe
