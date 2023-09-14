@@ -4,7 +4,10 @@
   "description": "Excel to Zalktis document XML",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node --check index.js",
+    "start": "node index.js",
+    "build": "pkg --targets node18-win-x64 index.js"
   },
   "author": "Helmuts Razdovskis",
   "license": "ISC",

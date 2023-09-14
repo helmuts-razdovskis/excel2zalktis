@@ -96,9 +96,9 @@ try {
             // Map the JSON data to xml
             jsonData.forEach((row, rowIndex) => {
                 if (rowIndex > 0) {
-                    const profile = getProfile(row, mapping, profiles);
+                    const profile = getProfile(row, mapping, profiles, xlsFileName);
 
-                    xmlgen.xmlDokuments(row, xmlRoot, { ...config, ...{ profile } });
+                    xmlgen.xmlDokuments(row, xmlRoot, { ...config, ...{ profile }, xlsFileName });
                 }
             });
 
@@ -120,6 +120,7 @@ try {
     process.stdin.on('keypress', (str, key) => {
         process.stdin.setRawMode(false);
         process.stdin.end();
+        process.exit(1);
     });
 }
 
@@ -158,13 +159,13 @@ function ChangeFileExt(filePath, newExtension) {
         ext: newExtension,
     });
 }
-function getProfile(data, mapping, profiles) {
+function getProfile(data, mapping, profiles, xlsFileName) {
 
     const col = mapping['_profile'];
 
     const profile = profiles[data[col]];
     if (!profile) {
-        throw new Error(`Profile '${data[col]}' not found!`);
+        throw new Error(`Profile '${data[col]}' not found! File: ${xlsFileName}`);
     }
 
     return profile;

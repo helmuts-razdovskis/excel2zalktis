@@ -60,6 +60,26 @@ module.exports = {
             LikmePVN: 20,
         }
     },
+    fi_fiz: {
+        Rezerve2: 'ar pārskaitījumu',
+        Rezerve3: '0',
+        PersonalName: 'Fiziska persona FI',
+        PersonalNmrNr: '000000-00004',
+        PersonalValstsID: '246',
+        PersonalTips: '1',
+        Kontejums: {
+            DKonts: '2677',
+            KKonts: '6123',
+            Tips: 1,
+            LikmePVN: 24,
+        },
+        KontejumsPvn: {
+            DKonts: '2677',
+            KKonts: '5743',
+            Tips: 3,
+            LikmePVN: 24,
+        }
+    },
     lv_jur: {
         Rezerve2: 'ar pārskaitījumu',
         Rezerve3: '0',
@@ -104,7 +124,7 @@ module.exports = {
         Rezerve2: 'ar pārskaitījumu',
         Rezerve3: '0',
         PersonalTips: '0',
-        PersonalValstsID: '428',
+        PersonalValstsID: '246',
         Kontejums: {
             DKonts: '2677',
             KKonts: '6111',

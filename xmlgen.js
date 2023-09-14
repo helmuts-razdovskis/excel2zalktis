@@ -106,11 +106,11 @@ const xmlKontejums = (data, xmlRoot, config) => {
     if (!(config.skipChecks)) {
         const summaPvn = toSummaAbs(getValue('SummaPVN', data, config));
         if (isNaN(summaPvn))
-            throw new Error('SummaPVN is NaN');
+            throw new Error('SummaPVN is NaN. File: ' + config.xlsFileName);
         if (isNaN(summaBezPVN))
-            throw new Error('SummaBezPVN is NaN');
+            throw new Error('SummaBezPVN is NaN. File: ' + config.xlsFileName);
         if (summaPvn != 0 && summaPvn >= Math.abs(summaBezPVN))
-            throw new Error('SummaPVN >= SummaBezPVN');
+            throw new Error('SummaPVN >= SummaBezPVN. File: ' + config.xlsFileName);
     }
 
     const daudzums = 1 * Math.sign(summaBezPVN);
